@@ -3,6 +3,7 @@ using Elsa.Activities.UserTask.Extensions;
 using Elsa.Persistence.EntityFramework.Core.Extensions;
 using Elsa.Persistence.EntityFramework.Sqlite;
 using Elsa.WorkflowTesting.Api.Extensions;
+using Elsa.Services.Bookmarks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -46,6 +47,8 @@ namespace ElsaDashboard.Samples.AspNetCore.Monolith
                 .AddElsaSwagger()
                 .AddElsaApiEndpoints()
                 .AddWorkflowTestingServices();
+                .AddNotificationHandlers(typeof(Startup))
+                .AddBookmarkProvider<TestReceiveRequestBookmarkkProvider>();
 
             // Allow arbitrary client browser apps to access the API.
             // In a production environment, make sure to allow only origins you trust.
