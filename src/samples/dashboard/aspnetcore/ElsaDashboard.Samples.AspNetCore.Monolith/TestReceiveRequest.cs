@@ -3,7 +3,7 @@ using Elsa.Activities.Http;
 using Elsa.Activities.Http.Bookmarks;
 using Elsa.Attributes;
 using Elsa.Events;
-using Elsa.Services.Bookmarks;
+using Elsa.Services;
 using MediatR;
 using Microsoft.AspNetCore.Http;
 using System;
