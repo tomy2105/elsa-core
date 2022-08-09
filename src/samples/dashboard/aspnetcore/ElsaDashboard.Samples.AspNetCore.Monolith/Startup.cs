@@ -46,7 +46,7 @@ namespace ElsaDashboard.Samples.AspNetCore.Monolith
             services
                 .AddElsaSwagger()
                 .AddElsaApiEndpoints()
-                .AddWorkflowTestingServices();
+                .AddWorkflowTestingServices()
                 .AddNotificationHandlers(typeof(Startup))
                 .AddBookmarkProvider<TestReceiveRequestBookmarkkProvider>();
 

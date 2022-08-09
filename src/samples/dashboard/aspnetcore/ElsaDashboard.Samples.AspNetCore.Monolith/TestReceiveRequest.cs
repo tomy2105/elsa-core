@@ -54,7 +54,7 @@ namespace ElsaDashboard.Samples.AspNetCore.Monolith
     {
         public override async ValueTask<IEnumerable<BookmarkResult>> GetBookmarksAsync(BookmarkProviderContext<TestReceiveRequest> context, CancellationToken cancellationToken)
         {
-            var path = ToLower(await context.ReadActivityPropertyAsync<HttpEndpoint, PathString>(x => x.Path, cancellationToken))!;
+            var path = ToLower((await context.ReadActivityPropertyAsync(x => x.Path, cancellationToken))!);
             var methods = new[] { "post" };
 
             BookmarkResult CreateBookmark(string method) => Result(new(path, method), nameof(HttpEndpoint));
